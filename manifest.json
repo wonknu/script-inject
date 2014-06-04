@@ -1,0 +1,52 @@
+{
+    "name": "script-inject",
+    "version": "1.0",
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": [
+            "js/background.js",
+            "js/scriptLoader.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "css": [
+                "css/style.css"
+            ],
+            "js": [
+                "js/scriptLoader.js"
+            ]
+        }
+    ],
+    "offline_enabled": true,
+    "sandbox": {
+       "pages": [
+           "index.html"
+       ]
+    },
+    "icons": {
+        "16": "icon16.png",
+        "16": "icon19.png",
+        "16": "icon32.png",
+        "48": "icon48.png",
+        "48": "icon100.png",
+        "128": "icon128.png"
+    },
+    "browser_action": {
+        "default_icon": "icon.png",
+        "description": "can inject script on the page"
+    },
+    "web_accessible_resources": [
+        "",
+        ""
+    ],
+    "manifest_version": 2
+}
